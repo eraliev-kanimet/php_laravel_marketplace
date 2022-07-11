@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @method static whereNull(string $string)
- * @property mixed $id
+ * @property int $id
  */
 class Category extends Model
 {
