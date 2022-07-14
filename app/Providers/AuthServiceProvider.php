@@ -4,9 +4,11 @@ namespace App\Providers;
 
 use App\Models\Manufacturer\Manufacturer;
 use App\Models\Product\Color\Color;
+use App\Models\Product\Delivery\Delivery;
 use App\Models\Product\Product;
 use App\Models\Product\Size\Size;
 use App\Policies\ColorPolicy;
+use App\Policies\DeliveryPolicy;
 use App\Policies\ManufacturerPolicy;
 use App\Policies\ProductsPolicy;
 use App\Policies\SizePolicy;
@@ -22,6 +24,7 @@ class AuthServiceProvider extends ServiceProvider
         Color::class => ColorPolicy::class,
         Manufacturer::class => ManufacturerPolicy::class,
         Product::class => ProductsPolicy::class,
+        Delivery::class => DeliveryPolicy::class
     ];
 
     /**

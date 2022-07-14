@@ -6,6 +6,13 @@ use App\Models\Product\ProductTemplate;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @method static create(array $data)
+ * @property int $id
+ * @property bool $free
+ * @property bool $fitting
+ * @property int $return
+ */
 class Delivery extends Model
 {
     /**
