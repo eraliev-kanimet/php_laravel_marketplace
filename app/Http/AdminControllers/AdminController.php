@@ -18,12 +18,13 @@ class AdminController extends BaseController
      */
     public function saveImage($file): string
     {
-        $dir = 'storage/pictures/' . date('Y') . '/' . date('m') . '/' . date('d');
+        $dir = 'storage/app/public/pictures/' . date('Y') . '/' . date('m') . '/' . date('d');
         if (!file_exists($dir)) {
             mkdir($dir, 0775, true);
         }
-        $path = $dir . '/' . md5(time()) . $file->getClientOriginalName();
-        Image::make($file)->resize(600, 500)->save($path);
-        return $path;
+        $image_name = md5(time()) . $file->getClientOriginalName();
+        Image::make($file)->resize(600, 500)->save($dir . $image_name);
+
+        return 'storage/pictures/' . date('Y') . '/' . date('m') . '/' . date('d') . $image_name;
     }
 }
